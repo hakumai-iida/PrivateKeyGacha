@@ -1,0 +1,5 @@
+#細かな指定は各フォルダ内の[.gitignore]にて行う
+.vs/
+bin/
+obj/
+Properties/
