@@ -134,7 +134,10 @@ namespace NethereumSample
                 var privateKey = ecKey.GetPrivateKeyAsBytes().ToHex();
                 var account = new Account(privateKey);
 
-                Console.WriteLine(account.Address + "(" + (i + 1).ToString() + "連目)");
+                if( ((i+1)%1000) == 0 )
+                {
+                    Console.WriteLine(account.Address + "(" + (i + 1).ToString() + "連目)");
+                }
 
                 // 頭の指定が有効で一致しなければハズレ
                 if (targetHead.Length > 0)
@@ -168,6 +171,7 @@ namespace NethereumSample
 
                 // ここまできたらアタリ
                 Console.WriteLine("★★★★★大勝利★★★★★");
+                Console.WriteLine("試行 : " + (i + 1).ToString() + "連目");
                 Console.WriteLine("アドレス : " + account.Address);
                 Console.WriteLine("秘密鍵 : " + account.PrivateKey);
                 return;
